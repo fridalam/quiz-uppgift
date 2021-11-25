@@ -169,7 +169,7 @@ const students = [
 ];
 
 // Fisher Yates algoritm för att slumpa studenter
-const shuffleArray = array => {
+const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       const temp = array[i];
@@ -177,4 +177,72 @@ const shuffleArray = array => {
       array[j] = temp;
     }
 }
+
+// Deklarerar variabel utanför nedan funktion för att vi behöver nå den längre ner också
+let rightAnswer;
+
+// Funktion för att hämta 4 studenter och en bild
+const getStudent = () => {
+
+    // Slumpar studenter
+    shuffleArray(students);
+
+    // Tar ut 4 studenter (objekt)
+    const fourStudents = students.slice(0, 4);
+    // console.log("Fyra utvalda studenter:", fourStudents);
+
+    // Utser rätt svar
+    rightAnswer = fourStudents[0];
+    // console.log("Rätt svar:", rightAnswer);
+
+    // Kopplat det rätta svarets bild till HTML
+    studentImageEl.src = rightAnswer.image;
+
+    // Plockat ut de fyra studenternas namn i en variabel
+    const fourStudentsNames = fourStudents.map((student) => student.name);
+
+    // Slumpar i vilken ordning de fyra namnen visas
+    shuffleArray(fourStudentsNames);
+    nameButtonsEl.innerHTML = "";
+
+    // Ger varje namn en knapp
+    fourStudentsNames.forEach((studentName) => {
+        nameButtonsEl.innerHTML += `<button>${studentName}</button>`;
+    });
+}
+// Kallar på funktionen ovan
+getStudent();
+
+// Håll koll på antal gissningar
+let numberOfGuesses = 0;
+let correctGuesses = 0;
+
+// Anger vad som ska hända vid klick på knapp
+nameButtonsEl.addEventListener("click", (e) => {
+
+    if (e.target.tagName === "BUTTON") {
+
+        // Öka antal gissningar med 1
+        numberOfGuesses++;
+
+        // Bestämmer händelser vid rätt eller fel gissning
+        if (e.target.innerText === rightAnswer.name) {
+
+            correctGuesses++;
+
+            getStudent();
+            // console.log("Du gissade rätt");
+
+        } else {
+
+            getStudent();
+            // console.log("Du gissade fel");
+        }
+    }
+
+
+
+
+});
+
 
