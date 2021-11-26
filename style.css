@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(212, 208, 208);
+    color:rgb(146, 141, 141);
+}
+
+.nameBtn {
+    background-color: rgb(146, 141, 141);
+    color: white;
+    font-variant: small-caps;
+    
+}
+
+.showResultButton {
+    background-color: white;
+    color: rgb(146, 141, 141);
+    border: rgb(146, 141, 141);
+    font-variant: small-caps;
+}
+
+.newGameButton {
+    background-color: rgb(146, 141, 141);
+    color: white;
+    font-variant: small-caps;
+}
+
+
+.gameResult {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444444a2;
+    align-items: center;
+}
+
+.resultBox {
+	background-color: white;
+    width: 40vh;
+    height: 60vh;
+}

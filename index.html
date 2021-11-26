@@ -18,27 +18,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-light text-secondary">
+<body>
     <header class="text-center p-5">
         <h1 class="display-6">Who is the student?</h1>
     </header>
     
-    <section class="quizGame">
-        <div class="image-container">
-            <img class="studentImage" src="" alt="student">
+    <section class="quizGame container d-flex flex-wrap justify-content-center">
+        <div class="image-container mb-5">
+            <img class="studentImage rounded-circle img-fluid" src="" alt="student">
         </div>
 
-        <div class="nameButtons">
+        <div class="nameButtons container d-flex flex-column flex-md-row justify-content-center mb-3">
         </div>
-
+    </section>
+    <section class="resultSection d-flex justify-content-center">
         <div class="showResult">
-            <button class="showResultButton">Show Result</button>
+            <button class="showResultButton btn d-none">Show Result</button>
         </div>
     </section>
 
-    <section class="gameResult">
-        <p class="resultText"></p>
-        <button class="newGameButton">New Game</button>
+    <section class="gameResult d-none d-flex justify-content-center">
+        <div class="resultBox text-center d-flex flex-wrap align-items-center justify-content-center">
+            <p class="resultText"></p>
+            <button class="newGameButton btn">New Game</button>
+        </div>
     </section>
 
     <script src="script.js"></script>

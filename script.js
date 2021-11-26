@@ -207,7 +207,7 @@ const getStudent = () => {
 
     // Ger varje namn en knapp
     fourStudentsNames.forEach((studentName) => {
-        nameButtonsEl.innerHTML += `<button>${studentName}</button>`;
+        nameButtonsEl.innerHTML += `<button class="p-3 m-2 btn nameBtn">${studentName}</button>`;
     });
 }
 // Kallar på funktionen ovan
@@ -224,6 +224,7 @@ nameButtonsEl.addEventListener("click", (e) => {
 
         // Öka antal gissningar med 1
         numberOfGuesses++;
+        // console.log(numberOfGuesses);
 
         // Bestämmer händelser vid rätt eller fel gissning
         if (e.target.innerText === rightAnswer.name) {
@@ -238,11 +239,27 @@ nameButtonsEl.addEventListener("click", (e) => {
             getStudent();
             // console.log("Du gissade fel");
         }
+
+        // Bestämmer vad som händer när antal gissningar blir 10
+        if (numberOfGuesses === 10) {
+
+            // Knapp som visas efter 10 gissningar
+            showResultButtonEl.classList.remove("d-none");
+
+            // Döljer spelet så att ny bild och nya namn inte syns
+            quizGameEl.classList.add("d-none");
+
+            // Händelse vid klick på knapp
+            showResultButtonEl.addEventListener("click", () => {
+
+                // Visar min lightbox
+                gameResultEl.classList.remove("d-none");
+
+                // Text med resultat i lightbox
+                resultTextEl.innerText = `You guessed correct on ${correctGuesses} student(s) out of ${numberOfGuesses}.`;
+
+                
+            })
+        }
     }
-
-
-
-
 });
-
-
