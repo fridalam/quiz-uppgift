@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,22 +23,26 @@
         <h1 class="display-6">Who is the student?</h1>
     </header>
     
+    <!-- Sektion för själva spelet, bild samt namnknappar -->
     <section class="quizGame container d-flex flex-wrap justify-content-center">
         <div class="image-container mb-5">
             <img class="studentImage rounded-circle img-fluid" src="" alt="student">
         </div>
 
-        <div class="nameButtons container d-flex flex-column flex-md-row justify-content-center mb-3">
+        <div class="nameButtons container d-flex flex-column flex-lg-row justify-content-center mb-3">
         </div>
     </section>
+
+    <!-- Sektion för Show Result -knapp. Dold tills spelomgång är slut. -->
     <section class="resultSection d-flex justify-content-center">
-        <div class="showResult">
+        <div>
             <button class="showResultButton btn d-none">Show Result</button>
         </div>
     </section>
 
+    <!-- Dold sektion som visar resultat efter spel är slut -->
     <section class="gameResult d-none d-flex justify-content-center">
-        <div class="resultBox text-center d-flex flex-wrap align-items-center justify-content-center">
+        <div class="resultBox text-center d-flex flex-wrap flex-column align-items-center justify-content-center">
             <p class="resultText"></p>
             <button class="newGameButton btn">New Game</button>
         </div>

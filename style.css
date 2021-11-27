@@ -3,6 +3,7 @@ body {
     color:rgb(146, 141, 141);
 }
 
+/* Skapad i JavaScript för styling av namnknappar */
 .nameBtn {
     background-color: rgb(146, 141, 141);
     color: white;
@@ -10,6 +11,7 @@ body {
     
 }
 
+/* Nedan är skapade i HTML, styling av knappar och resultatsida */
 .showResultButton {
     background-color: white;
     color: rgb(146, 141, 141);
@@ -23,7 +25,7 @@ body {
     font-variant: small-caps;
 }
 
-
+/* Lightbox */ 
 .gameResult {
 	position: fixed;
 	top: 0;
@@ -34,8 +36,9 @@ body {
     align-items: center;
 }
 
+/* Lightbox ruta med text och New Game -knapp */
 .resultBox {
 	background-color: white;
     width: 40vh;
-    height: 60vh;
+    height: 50vh;
 }

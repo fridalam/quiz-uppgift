@@ -2,7 +2,6 @@
 const quizGameEl = document.querySelector(".quizGame");
 const studentImageEl = document.querySelector(".studentImage");
 const nameButtonsEl = document.querySelector(".nameButtons");
-const showResultEl = document.querySelector(".showResult");
 const showResultButtonEl = document.querySelector(".showResultButton");
 const gameResultEl = document.querySelector(".gameResult");
 const resultTextEl = document.querySelector(".resultText");
@@ -178,7 +177,7 @@ const shuffleArray = (array) => {
     }
 }
 
-// Deklarerar variabel utanför nedan funktion för att vi behöver nå den längre ner också
+// Deklarerar variabel utanför nedan funktion för att vi behöver nå den även längre ner
 let rightAnswer;
 
 // Funktion för att hämta 4 studenter och en bild
@@ -191,7 +190,7 @@ const getStudent = () => {
     const fourStudents = students.slice(0, 4);
     // console.log("Fyra utvalda studenter:", fourStudents);
 
-    // Utser rätt svar
+    // Bestämmer att student på index 0 alltid är rätt svar
     rightAnswer = fourStudents[0];
     // console.log("Rätt svar:", rightAnswer);
 
@@ -258,7 +257,20 @@ nameButtonsEl.addEventListener("click", (e) => {
                 // Text med resultat i lightbox
                 resultTextEl.innerText = `You guessed correct on ${correctGuesses} student(s) out of ${numberOfGuesses}.`;
 
-                
+                newGameButtonEl.addEventListener("click", () => {
+
+                    getStudent();
+
+                    numberOfGuesses = 0;
+                    correctGuesses = 0;
+
+                    gameResultEl.classList.add("d-none");
+
+                    showResultButtonEl.classList.add("d-none");
+
+                    quizGameEl.classList.remove("d-none");  
+                }
+                )
             })
         }
     }
